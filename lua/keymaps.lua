@@ -32,3 +32,11 @@ wk.register({
         p = {"<cmd>tabp<CR>", "prev tab"},
     },
 })
+
+-- LSP code actions
+wk.register({
+    ["<leader>l"] = {
+        name = "+lsp",
+        a = {"<cmd>lua vim.lsp.buf.code_action()<CR>", "code action"},
+    }
+})
