@@ -38,5 +38,10 @@ wk.register({
     ["<leader>l"] = {
         name = "+lsp",
         a = {"<cmd>lua vim.lsp.buf.code_action()<CR>", "code action"},
+        r = {"<cmd>lua vim.lsp.buf.rename()<CR>", "rename"},
+        h = {"<cmd>lua vim.lsp.buf.hover()<CR>", "symbol hover"},
+        n = {"<cmd>lua vim.diagnostic.goto_next()<CR>", "next diagnostic"},
+        p = {"<cmd>lua vim.diagnostic.goto_prev()<CR>", "prev diagnostic"},
     }
 })
+
