@@ -23,3 +23,9 @@ require("options") -- Load Neovim Basic Configuration
 require("keymaps") -- Load Custom Keybindings for Neovim
 require("lsp") -- Load specific lsp configs
 
+vim.cmd[[colorscheme dracula]]
+require('lualine').setup {
+    options = {
+        theme = 'dracula-nvim'
+    }
+}
