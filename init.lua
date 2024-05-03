@@ -15,6 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Leader is space
 vim.g.mapleader = " "
+vim.g.maplocalleader = ","
 
 -- Start lazy
 require("lazy").setup("plugins")
