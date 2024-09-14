@@ -20,19 +20,6 @@ vim.g.maplocalleader = ","
 -- Start lazy
 require("lazy").setup("plugins")
 
-vim.g.coq_settings = { 
-    auto_start = true,
-    clients = {
-        lsp = {
-          enabled = true,
-        },
-        tabnine = {
-          enabled = true,
-        },
-    },
-}
-require("coq")
-
 require("options") -- Load Neovim Basic Configuration
 require("keymaps") -- Load Custom Keybindings for Neovim
 require("lsp") -- Load specific lsp configs
