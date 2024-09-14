@@ -2,46 +2,39 @@ local keymap = vim.keymap -- for conciseness
 local wk = require("which-key")
 
 -- Clear highlights with leader + nh
-wk.register({
-    ["<leader>nh"] = {"<cmd>nohl<CR>", "clear highlights"},
+wk.add({
+    { "<leader>nh", "<cmd>nohl<CR>", desc = "clear highlights"},
 })
 
 -- Window mangement
-wk.register({
-    ["<leader>s"] = {
-        name = "+split",
-        v = {"<C-w>v", "split vertically"},
-        s = {"<C-w>s", "split horizontally"},
-        e = {"<C-w>=", "equal size"},
-        x = {"<cmd>close<CR>", "close current"},
-        -- Navigation
-        k = {"<cmd>wincmd k<CR>", "move up"},
-        j = {"<cmd>wincmd j<CR>", "move down"},
-        h = {"<cmd>wincmd h<CR>", "move left"},
-        l = {"<cmd>wincmd l<CR>", "move right"},
-    },
+wk.add({
+    { "<leader>s", group = "+split" },
+    { "<leader>sv", "<C-w>v", desc = "split vertically" },
+    { "<leader>ss", "<C-w>s", desc = "split horizontally" },
+    { "<leader>e", "<C-w>=", desc = "equal size" },
+    { "<leader>x", "<cmd>close<CR>", desc = "close current"},
+    -- Navigation
+    { "<leader>k", "<cmd>wincmd k<CR>", desc = "move up"},
+    { "<leader>j", "<cmd>wincmd j<CR>", desc = "move down"},
+    { "<leader>h", "<cmd>wincmd h<CR>", desc = "move left"},
+    { "<leader>l", "<cmd>wincmd l<CR>", desc = "move right"},
 })
 
 -- Tab manegment
-wk.register({
-    ["<leader>t"] = {
-        name = "+tab",
-        o = {"<cmd>tabnew<CR>", "new tab"},
-        x = {"<cmd>tabclose<CR>", "close tab"},
-        n = {"<cmd>tabn<CR>", "next tab"},
-        p = {"<cmd>tabp<CR>", "prev tab"},
-    },
+wk.add({
+    { "<leader>t", group = "tab" },
+    { "<leader>tn", "<cmd>tabn<CR>", desc = "next tab" },
+    { "<leader>to", "<cmd>tabnew<CR>", desc = "new tab" },
+    { "<leader>tp", "<cmd>tabp<CR>", desc = "prev tab" },
+    { "<leader>tx", "<cmd>tabclose<CR>", desc = "close tab" },
 })
 
 -- LSP code actions
-wk.register({
-    ["<leader>l"] = {
-        name = "+lsp",
-        a = {"<cmd>lua vim.lsp.buf.code_action()<CR>", "code action"},
-        r = {"<cmd>lua vim.lsp.buf.rename()<CR>", "rename"},
-        h = {"<cmd>lua vim.lsp.buf.hover()<CR>", "symbol hover"},
-        n = {"<cmd>lua vim.diagnostic.goto_next()<CR>", "next diagnostic"},
-        p = {"<cmd>lua vim.diagnostic.goto_prev()<CR>", "prev diagnostic"},
-    }
+wk.add({
+    { "<leader>l", group = "lsp" },
+    { "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<CR>", desc = "code action" },
+    { "<leader>lh", "<cmd>lua vim.lsp.buf.hover()<CR>", desc = "symbol hover" },
+    { "<leader>ln", "<cmd>lua vim.diagnostic.goto_next()<CR>", desc = "next diagnostic" },
+    { "<leader>lp", "<cmd>lua vim.diagnostic.goto_prev()<CR>", desc = "prev diagnostic" },
+    { "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<CR>", desc = "rename" },
 })
-
