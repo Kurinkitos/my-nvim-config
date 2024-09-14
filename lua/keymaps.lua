@@ -1,6 +1,8 @@
 local keymap = vim.keymap -- for conciseness
 local wk = require("which-key")
 
+local cmp = require("cmp")
+
 -- Clear highlights with leader + nh
 wk.add({
     { "<leader>nh", "<cmd>nohl<CR>", desc = "clear highlights"},
