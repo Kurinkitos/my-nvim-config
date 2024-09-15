@@ -13,13 +13,13 @@ wk.add({
     { "<leader>s", group = "+split" },
     { "<leader>sv", "<C-w>v", desc = "split vertically" },
     { "<leader>ss", "<C-w>s", desc = "split horizontally" },
-    { "<leader>e", "<C-w>=", desc = "equal size" },
-    { "<leader>x", "<cmd>close<CR>", desc = "close current"},
+    { "<leader>se", "<C-w>=", desc = "equal size" },
+    { "<leader>sx", "<cmd>close<CR>", desc = "close current"},
     -- Navigation
-    { "<leader>k", "<cmd>wincmd k<CR>", desc = "move up"},
-    { "<leader>j", "<cmd>wincmd j<CR>", desc = "move down"},
-    { "<leader>h", "<cmd>wincmd h<CR>", desc = "move left"},
-    { "<leader>l", "<cmd>wincmd l<CR>", desc = "move right"},
+    { "<leader>sk", "<cmd>wincmd k<CR>", desc = "move up"},
+    { "<leader>sj", "<cmd>wincmd j<CR>", desc = "move down"},
+    { "<leader>sh", "<cmd>wincmd h<CR>", desc = "move left"},
+    { "<leader>sl", "<cmd>wincmd l<CR>", desc = "move right"},
 })
 
 -- Tab manegment
